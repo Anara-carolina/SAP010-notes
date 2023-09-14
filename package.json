@@ -1,0 +1,18 @@
+{
+  "name": "sap010-notes",
+  "version": "1.0.0",
+  "description": "notas",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "dev": "vite"
+  },
+  "author": "anara",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^10.3.1"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9"
+  }
+}
