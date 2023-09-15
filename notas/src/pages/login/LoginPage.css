@@ -44,7 +44,6 @@ body {
 
 .notaText {
     font-family: 'Dynalight', cursive;
-    /* Use o nome da família da fonte definido na importação */
     font-size: 50px;
     margin: 0;
     color: #fff;
@@ -68,11 +67,8 @@ body {
 
 .googleBtn {
     cursor: pointer;
-    /* Adiciona o cursor de ponteiro para indicar que é clicável */
     background-color: #4E86E1;
     border: none;
-
-
 
 }
 
@@ -83,43 +79,40 @@ body {
 
 }
 
-/* CSS */
-/* Estilos para telas menores que 601px de largura */
 @media (max-width: 600px) {
     .papel {
         display: block;
-        /* Mostra a imagem papel */
     }
 
     .adesivo {
         display: block;
-        /* Mostra a imagem adesivo */
     }
 
     .paper {
         display: none;
-        /* Esconde a imagem papel1 */
     }
 
     .adesivo1 {
         display: none;
-        /* Esconde a imagem adesivo1 */
     }
 }
 
-/* Estilos para telas a partir de 601px de largura */
 @media (min-width: 601px) {
     .LoginPage {
         display: flex;
-        flex-direction: row; /* Alinha os elementos lado a lado */
+        flex-direction: row;
     }
 
     .textoLogin {
-        flex: 1; /* Expande para ocupar o espaço restante */
+        flex: 1;
         display: flex;
-        flex-direction: column; /* Empilha os elementos em coluna (vertical) */
-    
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: -30px;
+
     }
+
     .imagensLogin {
         display: flex;
         flex-direction: row;
@@ -127,34 +120,65 @@ body {
 
     .papel {
         display: none;
-        /* Esconde a imagem papel */
     }
 
     .adesivo {
         display: none;
-        /* Esconde a imagem adesivo */
 
     }
 
     .paper {
         display: flex;
-        /* Mostra a imagem papel1 */
-
+        margin: 0;
+        margin-top: -35px;
+        margin-left: -35px;
         width: 279px;
-        height: 100%;
+        height: 120%;
         flex-shrink: 0;
     }
 
     .adesivo1 {
         display: flex;
-        /* Mostra a imagem adesivo1 */
         margin-left: -80px;
         width: 160px;
-
+        margin-top: 40px;
         height: 100%;
-
-
     }
-
+    .blocoText {
+        font-size: 40px;
     
+    }
+    
+    .notaText {
+        font-size: 60px;
+       
+    
+    }
+    
+    .flower {
+        margin-top: 80px;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .textGoogle {
+        font-size:20px;
+        margin-left:-45px ;
+        
+    
+    }
+    
+    .googleBtn {
+        cursor: pointer;
+        background-color: #4E86E1;
+        border: none;
+    
+    }
+    
+    .imgGoogle {
+        width: 50px;
+        height: 50px;
+        
+    
+    }
 }
