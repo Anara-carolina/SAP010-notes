@@ -1,8 +1,15 @@
 import React, { useContext } from "react";
 import paper from "../../assets/papel.png";
+import papel from "../../assets/papel1.png";
 import google from "../../assets/icon-google.png";
+import stickers from "../../assets/stickers.png";
+import sticker from "../../assets/sticker.png";
+
+import flor from "../../assets/icon-flor.png";
 import { AuthGoogleContext } from "../../../context/AuthContext";
 import { Navigate } from "react-router-dom";
+import "./LoginPage.css";
+
 
 export default function LoginPage() {
     const { signInWithGoogle, signed } = useContext(AuthGoogleContext);
@@ -15,19 +22,29 @@ export default function LoginPage() {
     if (!signed) {
         return (
             <div className="LoginPage">
-                <picture className="Login">
-                    <img src={paper} alt="Ícone de Papel" />
-                </picture>
-                <div>
-                    <h1 className="blocoText">SEU BLOCO DE </h1>
-                    <h2 className="blocoText"> Notas </h2>
+                <div class="imagensLogin">
+                    <picture>
+                        <img src={paper} class="papel" alt="Papel" />
+                        <img src={papel} class="paper" alt="Papel" />
+
+                        <img src={stickers} class="adesivo" alt="adesivos" />
+
+                    </picture>
+                    <picture> <img src={sticker} class="adesivo1" alt="adesivos" />
+                    </picture>
                 </div>
-                <form className="formulario">
-                    <p className="textGoogle">Faça o login para começar a fazer suas anotações</p>
-                    <button className="googleBtn" onClick={signInClick}>
-                        <img src={google} alt="Ícone do Google" />
-                    </button>
-                </form>
+                <div class="textoLogin">
+                    <form class="formulario">
+                        <h1 class="blocoText">SEU BLOCO DE </h1>
+                        <h2 class="notaText"> Notas </h2>
+                        <img src={flor} class="flower" alt="icone de flor" />
+                        <p className="textGoogle">Faça o login para começar a fazer suas anotações</p>
+                        <button className="googleBtn" onClick={signInClick}>
+                            <img src={google} class="imgGoogle" alt="Ícone do Google" />
+                        </button>
+                    </form>
+                </div>
+
             </div>
         );
     }
