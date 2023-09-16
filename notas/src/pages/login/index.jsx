@@ -1,15 +1,13 @@
 import React, { useContext } from "react";
+import { AuthGoogleContext } from "../../../context/AuthContext";
+import { Navigate } from "react-router-dom";
+import "./LoginPage.css";
 import paper from "../../assets/papel.png";
 import papel from "../../assets/papel1.png";
 import google from "../../assets/icon-google.png";
 import stickers from "../../assets/stickers.png";
 import sticker from "../../assets/sticker.png";
-
 import flor from "../../assets/icon-flor.png";
-import { AuthGoogleContext } from "../../../context/AuthContext";
-import { Navigate } from "react-router-dom";
-import "./LoginPage.css";
-
 
 export default function LoginPage() {
     const { signInWithGoogle, signed } = useContext(AuthGoogleContext);

@@ -1,10 +1,14 @@
-import AuthGoogleProvider from "../context/AuthContext";
-import AppRoutes from "./pages/routes";
+import React from "react";
+import ReactDOM from "react-dom";
+import { AuthGoogleProvider } from "./../context/AuthContext"; // Importe o componente AuthGoogleProvider
+
 
 export default function App() {
     return (
-   <AuthGoogleProvider>
+    <AuthGoogleProvider>
     <AppRoutes />
-   </AuthGoogleProvider>
-    )
-}
+    </AuthGoogleProvider>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById("root"));

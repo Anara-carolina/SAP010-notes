@@ -1,7 +1,9 @@
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { auth } from "../src/lib/firebase-config";
 import { createContext, useEffect, useState } from "react";
+import { auth } from "../src/lib/firebase-config";
 import { Navigate } from "react-router-dom";
+
+
 
 const provider = new GoogleAuthProvider();
 
@@ -50,6 +52,7 @@ export default function AuthGoogleProvider({ children }) {
 
         return <Navigate to="/" />
     }
+    console.log("AuthGoogleContext:", AuthGoogleContext);
 
     return (
         <AuthGoogleContext.Provider value={{ signInWithGoogle, signed: !!user, user, signOut }}>

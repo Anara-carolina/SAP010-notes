@@ -110,6 +110,7 @@ body {
         align-items: center;
         justify-content: center;
         margin-left: -30px;
+        margin-bottom: 100px;
 
     }
 
@@ -132,7 +133,7 @@ body {
         margin: 0;
         margin-top: -35px;
         margin-left: -35px;
-        width: 279px;
+        width: 230px;
         height: 120%;
         flex-shrink: 0;
     }
@@ -144,41 +145,218 @@ body {
         margin-top: 40px;
         height: 100%;
     }
+
     .blocoText {
         font-size: 40px;
-    
+
     }
-    
+
     .notaText {
-        font-size: 60px;
-       
-    
+        font-size: 70px;
+
+
     }
-    
+
     .flower {
         margin-top: 80px;
-        width: 80px;
-        height: 80px;
+        width: 85px;
+        height: 85px;
     }
-    
+
     .textGoogle {
-        font-size:20px;
-        margin-left:-45px ;
-        
-    
+        font-size: 17px;
+        margin-left: -45px;
+
+
     }
-    
+
     .googleBtn {
         cursor: pointer;
         background-color: #4E86E1;
         border: none;
-    
+
     }
-    
+
     .imgGoogle {
-        width: 50px;
-        height: 50px;
-        
-    
+        width: 60px;
+        height: 60px;
+
+
     }
 }
+
+@media (min-width: 1024px) {
+    .LoginPage {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .textoLogin {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: -30px;
+        margin-bottom: 200px;
+
+    }
+
+    .imagensLogin {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .papel {
+        display: none;
+    }
+
+    .adesivo {
+        display: none;
+
+    }
+
+    .paper {
+        display: flex;
+        margin: 0;
+        margin-top: -35px;
+        margin-left: -35px;
+        width: 400px;
+        height: 120%;
+        flex-shrink: 0;
+    }
+
+    .adesivo1 {
+        display: flex;
+        margin-left: -80px;
+        width: 160px;
+        margin-top: 40px;
+        height: 100%;
+    }
+
+    .blocoText {
+        font-size: 50px;
+
+    }
+
+    .notaText {
+        font-size: 70px;
+
+
+    }
+
+    .flower {
+        margin-top: 80px;
+        width: 90px;
+        height: 90px;
+    }
+
+    .textGoogle {
+        font-size: 25px;
+        margin-left: -45px;
+
+
+    }
+
+    .googleBtn {
+        cursor: pointer;
+        background-color: #4E86E1;
+        border: none;
+
+    }
+
+    .imgGoogle {
+        width: 60px;
+        height: 60px;
+
+
+    }
+}
+@media (min-width: 1351px) {
+    .LoginPage {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .textoLogin {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: -200px;
+
+    }
+
+    .imagensLogin {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .papel {
+        display: none;
+    }
+
+    .adesivo {
+        display: none;
+
+    }
+
+    .paper {
+        display: flex;
+        margin: 0;
+        margin-top: -35px;
+        margin-left: -205px;
+        width: 500px;
+        height: 120%;
+        flex-shrink: 0;
+    }
+
+    .adesivo1 {
+        display: flex;
+        margin-left: -80px;
+        width: 160px;
+        margin-top: -50px;
+        height: 100%;
+    }
+
+    .blocoText {
+        font-size: 60px;
+
+    }
+
+    .notaText {
+        font-size: 80px;
+
+
+    }
+
+    .flower {
+        margin-top: 100px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .textGoogle {
+        font-size: 30px;
+        margin-left: -45px;
+
+
+    }
+
+    .googleBtn {
+        cursor: pointer;
+        background-color: #4E86E1;
+        border: none;
+
+    }
+
+    .imgGoogle {
+        width: 60px;
+        height: 60px;
+
+
+    }
+}
+
+
