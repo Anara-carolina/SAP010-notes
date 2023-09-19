@@ -1,19 +1,14 @@
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { createContext, useEffect, useState } from "react";
 import { auth } from "../src/lib/firebase-config";
+import { createContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-
-
 
 const provider = new GoogleAuthProvider();
 
 export const AuthGoogleContext = createContext({});
 
 export default function AuthGoogleProvider({ children }) {
-
     const [user, setUser] = useState(null);
-
-
 
     useEffect(() => {
         const loadStorageAuth = () => {
@@ -21,42 +16,35 @@ export default function AuthGoogleProvider({ children }) {
             const sessionUser = sessionStorage.getItem("@AuthFirebase:user");
             if (sessionToken && sessionUser) {
                 setUser(sessionUser);
-                console.log(sessionUser)
             }
         };
         loadStorageAuth();
-    }, [])
+    }, []);
 
-    const signInWithGoogle = () => {
-        signInWithPopup(auth, provider)
-        .then((result) => {
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const token = credential.accessToken;
-          const user = JSON.stringify(result.user);
-          setUser(user);
-          sessionStorage.setItem("@AuthFirebase:token", token);
-          sessionStorage.setItem("@AuthFirebase:user", user);
-        //   const user = result.user;
-        //   setUser(JSON.stringify(user));
-        //   sessionStorage.setItem("@AuthFirebase:token", token);
-        //   sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
-        }).catch((error) => {
-          const errorCode = error.code;
-          console.log(errorCode);
-        });
+    const signInWithGoogle = async () => {
+        try {
+            const result = await signInWithPopup(auth, provider);
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            const user = JSON.stringify(result.user);
+            setUser(user);
+            sessionStorage.setItem("@AuthFirebase:token", token);
+            sessionStorage.setItem("@AuthFirebase:user", user);
+        } catch (error) {
+            console.error("Erro ao fazer login com o Google:", error);
+        }
     };
 
     function signOut() {
         sessionStorage.clear();
         setUser(null);
 
-        return <Navigate to="/" />
+        return <Navigate to="/" />;
     }
-    console.log("AuthGoogleContext:", AuthGoogleContext);
 
     return (
         <AuthGoogleContext.Provider value={{ signInWithGoogle, signed: !!user, user, signOut }}>
             {children}
         </AuthGoogleContext.Provider>
-    )
+    );
 }
